@@ -1,7 +1,7 @@
 import React from 'react'
 import {FaRegTrashAlt} from 'react-icons/fa'
 const style ={
-    li: `flex justify-between p-4 bg-transparent capitalize text-white font-serif hover:bg-[#023020]`,
+    li: `flex justify-between p-4 bg-transparent capitalize text-white font-serif hover:bg-black`,
     liComplete: `flex justify-between p-4 bg-slate-400`, 
     row: `flex`, 
     text: `ml-2 cursor-pointer`,

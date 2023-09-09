@@ -7,8 +7,8 @@ import { db } from "./firebase";
 
 const style = {
   bg: `h-screen w-screen p-4 bg-[#1B1B1B]`, 
-  container: `bg-transparent max-w-[500px] w-full m-auto rounded-md shadow-xl p-4 `, 
-  heading: `text-3xl text-white font-normal text-center text-gray-800 p-2`,
+  container: `bg-transparent max-w-[500px] w-full m-auto rounded-md shadow-md shadow-white p-4 `, 
+  heading: `text-3xl text-white font-[Lato] text-center text-gray-800 p-2`,
   form: `flex justify-between text-xl`, 
   input: `border p-2 w-full text-xl font-mono rounded`,
   button: `hover:bg-black  p-4 ml-2 bg-transparent text-white`, 
