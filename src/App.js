@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import {AiOutlinePlus} from "react-icons/ai"; 
 import Todo from "./Todo";
 import { collection, onSnapshot, query, updateDoc, doc, addDoc, deleteDoc} from "firebase/firestore";
 
 import { db } from "./firebase";
-
+import { UserAuth } from "./context/AuthContext";
 const style = {
   bg: `h-screen w-screen p-4 bg-[#1B1B1B]`, 
   container: `bg-transparent max-w-[500px] w-full m-auto rounded-md shadow-md shadow-white p-4 `, 
@@ -18,6 +18,10 @@ const style = {
 function App() {
   const [todos, setTodos] = useState([]); 
   const [input, setInput] = useState([]);
+const { user } = UserAuth()
+
+
+
 
 
   // create todo 
@@ -59,9 +63,17 @@ function App() {
   const deleteTodo = async (id) => {
     await deleteDoc(doc(db, 'todos', id))
   }
+
+  
   return (
+    <>
+    {user ? (
     <div className={style.bg}>
       <div className={style.container}>
+
+      
+          
+      
         <h3 className={style.heading}>Todo App</h3>
         <form onSubmit={createTodo} className={style.form}>
           <input value={input} onChange={(e) => setInput(e.target.value)} className={style.input} type="text" placeholder="Add Todo" />
@@ -84,6 +96,13 @@ function App() {
       </div>
      
     </div>
+
+    ):(
+
+    <div>NOPE</div>
+
+    )}
+    </>
   );
 }
 
